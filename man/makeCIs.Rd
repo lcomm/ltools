@@ -9,7 +9,7 @@ makeCIs(makeCI.obj, alpha = 0.05, na.rm = FALSE)
 \arguments{
 \item{alpha}{What Type I error level alpha should be used? Defaults to 0.05}
 
-\item{na.rm}{Should NA's be excluded? Defaults to FALSE}
+\item{na.rm}{Should NAs be excluded? Defaults to FALSE}
 
 \item{makeCI.mat}{Matrix or data frame for which quantiles will be found}
 }

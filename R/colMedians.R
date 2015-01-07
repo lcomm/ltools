@@ -4,7 +4,7 @@
 #' (like a somewhat-simplified median analog to colMeans).
 #' Useful for calculating posterior medians in Bayesian statistics.
 #' @param colMedians.object Object for which we wish to calculate column medians
-#' @param na.rm Should NA's be excluded? Defaults to FALSE
+#' @param na.rm Should NAs be excluded? Defaults to FALSE
 #' @keywords median
 #' @export
 #' @examples

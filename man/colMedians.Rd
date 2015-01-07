@@ -9,7 +9,7 @@ colMedians(colMedians.object, na.rm = FALSE)
 \arguments{
 \item{colMedians.object}{Object for which we wish to calculate column medians}
 
-\item{na.rm}{Should NA's be excluded? Defaults to FALSE}
+\item{na.rm}{Should NAs be excluded? Defaults to FALSE}
 }
 \description{
 Function to calculate the column-wise medians of a matrix of data frame

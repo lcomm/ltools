@@ -3,7 +3,7 @@
 #' Function to calculate (two-sided) credible interval based on quantiles of a vector
 #' @param makeCI.vec Vector for which quantiles will be found
 #' @param alpha What Type I error level alpha should be used? Defaults to 0.05
-#' @param na.rm Should NA's be excluded? Defaults to FALSE
+#' @param na.rm Should NAs be excluded? Defaults to FALSE
 #' @keywords credible interval
 #' @seealso makeCIs
 #' @export

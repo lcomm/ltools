@@ -11,7 +11,7 @@ makeCI(makeCI.vec, alpha = 0.05, na.rm = FALSE)
 
 \item{alpha}{What Type I error level alpha should be used? Defaults to 0.05}
 
-\item{na.rm}{Should NA's be excluded? Defaults to FALSE}
+\item{na.rm}{Should NAs be excluded? Defaults to FALSE}
 }
 \description{
 Function to calculate (two-sided) credible interval based on quantiles of a vector
