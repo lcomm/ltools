@@ -28,3 +28,4 @@ colMedians <- function(colMedians.object, na.rm=FALSE){
     #Return the column-wise medians, excluding NAs if appropriate
     return(apply(colMedians.object, 2, FUN = median, na.rm=na.rm))
 }
+

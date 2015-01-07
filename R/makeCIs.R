@@ -26,3 +26,4 @@ makeCIs <- function(makeCI.obj, alpha=0.05, na.rm=FALSE){
     #Calculate (1-alpha)x100 % credible intervals
     return(t(apply(makeCI.obj, 2, FUN = makeCI, alpha, na.rm = na.rm)))
 }
+

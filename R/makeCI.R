@@ -21,3 +21,4 @@ makeCI <- function(makeCI.vec, alpha=0.05, na.rm=FALSE){
     #Calculate (1-alpha)x100 % credible interval
     quantile(x = makeCI.vec, probs = c(alpha/2, 1-alpha/2), na.rm = na.rm)
 }
+
