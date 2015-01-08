@@ -6,6 +6,7 @@
 #' Perhaps I am studying the wrong kind of statistics.
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords cats
+#' @seealso bunny_function
 #' @export
 #' @examples
 #' cat_function()
@@ -18,3 +19,4 @@ cat_function <- function(love=TRUE){
         print("I am not a cool person.")
     }
 }
+
