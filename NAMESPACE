@@ -2,6 +2,7 @@
 
 export(GelmanRubin)
 export(add.chain)
+export(bunny_function)
 export(cat_function)
 export(col2alpha)
 export(colMedians)

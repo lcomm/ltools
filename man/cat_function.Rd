@@ -18,5 +18,8 @@ Perhaps I am studying the wrong kind of statistics.
 \examples{
 cat_function()
 }
+\seealso{
+bunny_function
+}
 \keyword{cats}
 
