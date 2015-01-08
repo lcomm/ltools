@@ -1,4 +1,4 @@
-#' colMedians
+#' Column medians
 #' 
 #' Function to calculate the column-wise medians of a matrix of data frame
 #' (like a somewhat-simplified median analog to colMeans).

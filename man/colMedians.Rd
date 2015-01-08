@@ -2,7 +2,7 @@
 % Please edit documentation in R/colMedians.R
 \name{colMedians}
 \alias{colMedians}
-\title{colMedians}
+\title{Column medians}
 \usage{
 colMedians(colMedians.object, na.rm = FALSE)
 }

@@ -1,4 +1,4 @@
-#' makeCI
+#' Quantile-based credible interval for a vector
 #' 
 #' Function to calculate (two-sided) credible interval based on quantiles of a vector
 #' @param makeCI.vec Vector for which quantiles will be found

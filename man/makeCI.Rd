@@ -2,7 +2,7 @@
 % Please edit documentation in R/makeCI.R
 \name{makeCI}
 \alias{makeCI}
-\title{makeCI}
+\title{Quantile-based credible interval for a vector}
 \usage{
 makeCI(makeCI.vec, alpha = 0.05, na.rm = FALSE)
 }

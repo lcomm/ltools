@@ -2,7 +2,7 @@
 % Please edit documentation in R/makeCIs.R
 \name{makeCIs}
 \alias{makeCIs}
-\title{makeCIs}
+\title{Quantile-based credible intervals for a columns of a matrix}
 \usage{
 makeCIs(makeCI.obj, alpha = 0.05, na.rm = FALSE)
 }

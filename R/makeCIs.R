@@ -1,4 +1,4 @@
-#' makeCIs
+#' Quantile-based credible intervals for a columns of a matrix
 #' 
 #' Function to calculate (two-sided) credible intervals based on quantiles of a 
 #' matrix columns.
