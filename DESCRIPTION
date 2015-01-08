@@ -24,9 +24,10 @@ Imports:
     Hmisc,
     pscl,
     stats,
+Suggests:
     RColorBrewer,
+    testthat,
     assertthat,
     RPushbullet,
-    testthat,
     devtools,
     roxygen2
