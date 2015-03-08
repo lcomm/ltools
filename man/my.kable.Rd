@@ -4,42 +4,32 @@
 \alias{my.kable}
 \title{Customized kable (table-making function for knitr)}
 \usage{
-my.kable(my.kable.obj, caption = NULL, digits = 4, latexTranslate = FALSE,
-  greek = TRUE, prettyNum = TRUE)
+my.kable(kable.object, booktabs = TRUE, escape = FALSE, format = "latex",
+  caption = NULL, ...)
 }
 \arguments{
-\item{my.kable.obj}{Object (matrix or data frame) passed in to be kabled}
+\item{booktabs}{Whether booktabs style should be used.  Defaults to TRUE.}
 
-\item{caption}{Caption for the table. Defaults to no caption.}
+\item{escape}{Whether special LaTeX characters should be escaped.
+The default in kable right now is to escape these characters, but for some
+reason, escape never works quite like I want it to. Defaults to FALSE.}
 
-\item{digits}{Number of significant digits for numbers in the table. This
-sometimes works. Defaults to 4.}
+\item{format}{Type of table to be made.  Defaults to "latex".}
 
-\item{latexTranslate}{Whether or not the latexTranslate function from the
-Hmisc package should be used to escape out LaTeX-unfriendly characters.
-This tends not to work well for complicated cases. Defaults to FALSE.}
+\item{caption}{Caption for the table. Defaults to NULL (no caption).}
 
-\item{greek}{Argument to latexTranslate function. Again, this only works
-sometimes. Defaults to TRUE.}
+\item{...}{Other parameters passed to kable}
 
-\item{prettyNum}{Whether prettyNum should be used to align decimals, etc.
-Occasionally problematic. Defaults to TRUE.}
+\item{kable.obj}{Object (matrix or data frame) passed in to be kabled}
 }
 \description{
 Function to adapt kable function from knitr package to meet most of my
-table-making needs. Tries to do a lot of things, some of which it does
-successfully. Right-aligns numeric columns and left-aligns character
-columns, pretties up numbers using prettyNum (if desired), escapes out
-LaTeX characters (if desired). Writes the table in LaTeX code assuming
-that the booktabs package is being used. Definitely a work in progress.
-}
-\examples{
-## Fake table, an example where greek=TRUE actually works out
-my.table = data.frame(ABCs = LETTERS[1:3], beta=1:3, values=10^(-1:-3))
-my.kable(my.table, latexTranslate=TRUE, greek=TRUE)
+table-making needs. This intentionally removes the table environment, so the
+tables do not float. Unfortunately, that means it's hit or miss on whether
+the caption stays near the table.  This function is ugly
 }
 \seealso{
-kable, latexTranslate
+kable
 }
 \keyword{knitr}
 \keyword{tables}
