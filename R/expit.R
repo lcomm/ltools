@@ -11,6 +11,6 @@
 #' ## Matrix of values
 #' expit(matrix(1:4,2,2))
 #' 
-expit <- function(input){
-    exp(input)/(1+exp(input))
+expit <- function(x){
+    1/(1 + exp(-x))
 }
