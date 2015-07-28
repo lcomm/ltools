@@ -2,7 +2,7 @@
 % Please edit documentation in R/inst.if.R
 \name{inst.if}
 \alias{inst.if}
-\title{Function to install and load packages if necessary}
+\title{Install and load packages if necessary}
 \usage{
 inst.if(pkgname)
 }

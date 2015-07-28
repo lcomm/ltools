@@ -11,23 +11,23 @@ Depends: R (>= 2.15.1)
 License: GNU v2
 LazyData: true
 Imports:
-    car,
     boot,
-    MASS,
-    utils,
+    car,
     graphics,
+    Hmisc,
     knitr,
-    mvtnorm,
     lattice,
+    MASS,
     Matrix,
     MCMCpack,
-    Hmisc,
+    mvtnorm,
     pscl,
-    stats,
-Suggests:
     RColorBrewer,
-    testthat,
+    stats,
+    utils,
+Suggests:
     assertthat,
-    RPushbullet,
     devtools,
-    roxygen2
+    testthat,
+    roxygen2,
+    RPushbullet,

@@ -1,4 +1,4 @@
-#' Function to install and load packages if necessary
+#' Install and load packages if necessary
 #' 
 #' This function checks to see if a package is installed yet
 #' If not, it installs it.  Either way, once installed, it loads the library.
@@ -6,7 +6,7 @@
 #' @examples
 #' inst.if("Matrix")
 #' 
-inst.if = function(pkgname){
+inst.if <- function(pkgname){
     #Install if not in the list of available packages
     if (!require(pkgname, character.only=TRUE)) { 
         install.packages(eval(pkgname)) 
