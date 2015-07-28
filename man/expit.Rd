@@ -4,7 +4,7 @@
 \alias{expit}
 \title{Expit (Inverse logit)}
 \usage{
-expit(input)
+expit(x)
 }
 \arguments{
 \item{input}{Argument to the inverse logit function}
