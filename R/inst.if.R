@@ -5,6 +5,7 @@
 #' @param pkgname The name of the desired package as a string
 #' @examples
 #' inst.if("Matrix")
+#' 
 inst.if = function(pkgname){
     #Install if not in the list of available packages
     if (!require(pkgname, character.only=TRUE)) { 
@@ -13,3 +14,4 @@ inst.if = function(pkgname){
     #Load
     library(pkgname, character.only=TRUE)
 }
+
