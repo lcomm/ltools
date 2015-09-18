@@ -1,7 +1,7 @@
 #' Expit (Inverse logit)
 #' 
 #' Function to calculate the inverse-logit (or expit) 
-#' $\textrm{expit}(a) = \frac{1}{1+e^{-a}} = \frac{e^a}{1+e^a}$
+#' expit(x) = e^x/(1 + e^x) = 1/(1 + e^(-x))
 #' @param input Argument to the inverse logit function
 #' @keywords inverse-logit
 #' @export
