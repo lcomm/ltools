@@ -3,6 +3,7 @@
 #' This function checks to see if a package is installed yet
 #' If not, it installs it.  Either way, once installed, it loads the library.
 #' @param pkgname The name of the desired package as a string
+#' @export
 #' @examples
 #' inst.if("Matrix")
 #' 

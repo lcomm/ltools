@@ -3,6 +3,7 @@
 #' @param mat The matrix to be printed
 #' @param matType Bracketing type for the matrix. Defaults to "pmatrix"
 #' 
+#' @export
 #' @examples
 #' ## Make the matrix
 #' a <- rbind(1:4,5:8)
