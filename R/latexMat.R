@@ -9,9 +9,9 @@
 #' a <- rbind(1:4,5:8)
 #' 
 #' ## Apply the print function
-#' latexmat(a)
+#' latexMat(a)
 #' 
-latexmat <- function(mat, matType="pmatrix"){
+latexMat <- function(mat, matType="pmatrix"){
     #Insert & to separate elements in a row
     rows <- apply(mat,1, FUN=function(row) { paste(row,collapse=" & ") })
     
@@ -24,4 +24,3 @@ latexmat <- function(mat, matType="pmatrix"){
     #Return
     return(texcode)
 }
-
