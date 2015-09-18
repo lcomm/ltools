@@ -16,7 +16,7 @@ latexMat <- function(mat, matType="pmatrix"){
     rows <- apply(mat,1, FUN=function(row) { paste(row,collapse=" & ") })
     
     #Add line breaks between rows
-    wholemat <- paste(rows, collapse="\\\\ \\n ")
+    wholemat <- paste(rows, collapse=" \\\\ ")
     
     #Put all code together
     texcode <- paste(paste0("\\begin{",matType,"}"), wholemat, paste0("\\end{",matType,"}"))
