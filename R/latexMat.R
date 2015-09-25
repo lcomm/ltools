@@ -32,12 +32,13 @@ latexMat <- function(mat, matType = "pmatrix", fractions = TRUE, digits = 3, ali
     wholemat <- paste(rows, collapse=" \\\\ ")    
 
     #Put all code together
-    texcode <- paste(paste0("\\begin{",matType,"}[",align,"]"), 
+    texcode <- paste(paste0("\\begin{",matType,"*}[",align,"]"), 
                      wholemat, 
-                     paste0("\\end{",matType,"}"))
+                     paste0("\\end{",matType,"*}"))
     
     #Return
     return(texcode)
     
 }
 
+latexMat(matrix(0,5,6))
