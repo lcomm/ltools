@@ -4,7 +4,8 @@
 \alias{latexMat}
 \title{Write LaTeX code to print a matrix}
 \usage{
-latexMat(mat, matType = "pmatrix", fractions = TRUE)
+latexMat(mat, matType = "pmatrix", fractions = TRUE, digits = 3,
+  align = "r")
 }
 \arguments{
 \item{mat}{The matrix to be printed}
@@ -12,6 +13,11 @@ latexMat(mat, matType = "pmatrix", fractions = TRUE)
 \item{matType}{Bracketing type for the matrix. Defaults to "pmatrix"}
 
 \item{fractions}{Should we write the elements in fraction form (uses MASS package)? Defaults to TRUE}
+
+\item{digits}{Number of decimal places to print (if not using fractions)}
+
+\item{align}{Number alignment within columns. Options are "c" for center, "r" for right, "l" for left.
+Default is right aligned.}
 }
 \description{
 Write LaTeX code to print a matrix

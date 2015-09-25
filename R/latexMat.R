@@ -3,6 +3,9 @@
 #' @param mat The matrix to be printed
 #' @param matType Bracketing type for the matrix. Defaults to "pmatrix"
 #' @param fractions Should we write the elements in fraction form (uses MASS package)? Defaults to TRUE
+#' @param digits Number of decimal places to print (if not using fractions)
+#' @param align Number alignment within columns. Options are "c" for center, "r" for right, "l" for left.
+#' Default is right aligned.
 #' 
 #' @export
 #' @examples
@@ -12,7 +15,8 @@
 #' ## Apply the print function
 #' latexMat(a)
 #' 
-latexMat <- function(mat, matType = "pmatrix", fractions = TRUE){
+latexMat <- function(mat, matType = "pmatrix", fractions = TRUE, digits = 3, align = "r"){
+    
     #Insert & to separate elements in a row
     rows <- apply(mat, 1, FUN = function(row) 
         { 
@@ -20,16 +24,24 @@ latexMat <- function(mat, matType = "pmatrix", fractions = TRUE){
                 require("MASS")
                 paste(fractions(row), collapse=" & ") 
             } else {
-                paste(row, collapse=" & ")     
+                paste(round(row, digits), collapse=" & ")     
             }
         })
     
     #Add line breaks between rows
     wholemat <- paste(rows, collapse=" \\\\ ")
     
+    #Make alignment piece
+    al <- paste0("{", paste0(rep(align, ncol(mat)), collapse=""), "}")
+    
     #Put all code together
-    texcode <- paste(paste0("\\begin{",matType,"}"), wholemat, paste0("\\end{",matType,"}"))
+    texcode <- paste(paste0("\\begin{",matType,"}"), 
+                     al, 
+                     wholemat, 
+                     paste0("\\end{",matType,"}"))
     
     #Return
     return(texcode)
+    
 }
+
