@@ -32,7 +32,7 @@ latexMat <- function(mat, matType = "pmatrix", fractions = TRUE, digits = 3, ali
     wholemat <- paste(rows, collapse=" \\\\ ")
     
     #Make alignment piece
-    al <- paste0("{", paste0(rep(align, ncol(mat)), collapse=""), "}")
+    al <- paste0("[",align,"]")
     
     #Put all code together
     texcode <- paste(paste0("\\begin{",matType,"}"), 
