@@ -4,7 +4,6 @@
 #' @param matType Bracketing type for the matrix. Defaults to "pmatrix"
 #' @param fractions Should we write the elements in fraction form (uses MASS package)? Defaults to TRUE
 #' 
-#' @seealso fractions
 #' @export
 #' @examples
 #' ## Make the matrix

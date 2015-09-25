@@ -12,7 +12,6 @@ License: GNU v2
 LazyData: true
 Imports:
     boot,
-    car,
     graphics,
     Hmisc,
     knitr,
@@ -24,10 +23,10 @@ Imports:
     pscl,
     RColorBrewer,
     stats,
-    utils,
+    utils
 Suggests:
     assertthat,
     devtools,
     testthat,
     roxygen2,
-    RPushbullet,
+    RPushbullet
