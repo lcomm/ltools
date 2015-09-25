@@ -29,14 +29,10 @@ latexMat <- function(mat, matType = "pmatrix", fractions = TRUE, digits = 3, ali
         })
     
     #Add line breaks between rows
-    wholemat <- paste(rows, collapse=" \\\\ ")
-    
-    #Make alignment piece
-    al <- paste0("[",align,"]")
-    
+    wholemat <- paste(rows, collapse=" \\\\ ")    
+
     #Put all code together
-    texcode <- paste(paste0("\\begin{",matType,"}"), 
-                     al, 
+    texcode <- paste(paste0("\\begin{",matType,"}[",align,"]"), 
                      wholemat, 
                      paste0("\\end{",matType,"}"))
     
