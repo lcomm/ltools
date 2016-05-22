@@ -40,5 +40,3 @@ latexMat <- function(mat, matType = "pmatrix", fractions = TRUE, digits = 3, ali
     return(texcode)
     
 }
-
-latexMat(matrix(0,5,6))
