@@ -1,15 +1,17 @@
 Package: ltools
 Title: Helper Functions
-Version: 0.1
+Version: 0.2
 Authors@R: "Leah Comment <leah.comment@gmail.com> [aut, cre]"
 Description: An assortment of functions which I found myself repeatedly
     copying and pasting from homework to homework and project to project.
     Mostly related to tasks found in early-stage graduate work in statistics
     or another field with lots of data analysis.  Also a way to keep track
-    of which packages my favorite Bayesian functions (e.g., riwish) come from.
-Depends: R (>= 2.15.1)
+    of which packages my favorite Bayesian functions (e.g., riwish) come from.  
+    Increasingly, it includes functions useful for multiple research projects.
+Depends: R (>= 3.2.4)
 License: GNU v2
 LazyData: true
+LinkingTo: Rcpp, RcppArmadillo
 Imports:
     boot,
     graphics,
@@ -22,11 +24,15 @@ Imports:
     mvtnorm,
     pscl,
     RColorBrewer,
+    Rcpp (>= 0.11.3),
+    RcppArmadillo,
     stats,
-    utils
+    utils,
+    Rcpp
 Suggests:
     assertthat,
     devtools,
     testthat,
     roxygen2,
     RPushbullet
+NeedsCompilation: yes
