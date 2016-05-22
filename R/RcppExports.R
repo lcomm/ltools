@@ -14,6 +14,8 @@
 #' Values should range from 1 to $K$
 #' @param lg Should the log of the density be returned?  Defaults to false
 #' 
+#' @export
+#' 
 dMultinom <- function(probs, y, lg = FALSE) {
     .Call('ltools_dMultinom', PACKAGE = 'ltools', probs, y, lg)
 }
