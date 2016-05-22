@@ -15,6 +15,8 @@ using namespace Rcpp;
 //' Values should range from 1 to $K$
 //' @param lg Should the log of the density be returned?  Defaults to false
 //' 
+//' @export
+//' 
 // [[Rcpp::export]]
 Rcpp::NumericVector dMultinom(Rcpp::NumericMatrix probs, Rcpp::NumericVector y, bool lg = false){
     // get dimensions of probs
