@@ -20,3 +20,18 @@ dMultinom <- function(probs, y, lg = FALSE) {
     .Call('ltools_dMultinom', PACKAGE = 'ltools', probs, y, lg)
 }
 
+#' Normalize rows to sum to 1
+#' 
+#' Given a matrix, divide each row by its sum in order to normalize so that
+#' each row sums to 1.  Useful for obtaining category probabilities.
+#' 
+#' Note: doesn't perform any validation or checking
+#' 
+#' @param M The matrix with rows in need of normalization
+#' 
+#' @export
+#' 
+normalize_rows <- function(M) {
+    .Call('ltools_normalize_rows', PACKAGE = 'ltools', M)
+}
+

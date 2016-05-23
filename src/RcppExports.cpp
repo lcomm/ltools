@@ -19,3 +19,14 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// normalize_rows
+arma::mat normalize_rows(arma::mat M);
+RcppExport SEXP ltools_normalize_rows(SEXP MSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< arma::mat >::type M(MSEXP);
+    __result = Rcpp::wrap(normalize_rows(M));
+    return __result;
+END_RCPP
+}
