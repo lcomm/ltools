@@ -20,6 +20,22 @@ dMultinom <- function(probs, y, lg = FALSE) {
     .Call('ltools_dMultinom', PACKAGE = 'ltools', probs, y, lg)
 }
 
+#' Faster evaluation of multivariate normal densities
+#' 
+#' Given a matrix of realizations, evaluate a MVN density at those realizations.
+#' 
+#' @param x The vector(s) at which to evaluate the density. Each column is one 
+#' realization.
+#' @param mean The mean vector
+#' @param sigma The variance-covariance matrix
+#' @param lg Should the log-density be returned?  Defaults to false.
+#' 
+#' @export
+#' 
+dMvnorm <- function(x, mean, sigma, lg = FALSE) {
+    .Call('ltools_dMvnorm', PACKAGE = 'ltools', x, mean, sigma, lg)
+}
+
 #' Normalize rows to sum to 1
 #' 
 #' Given a matrix, divide each row by its sum in order to normalize so that
@@ -33,5 +49,36 @@ dMultinom <- function(probs, y, lg = FALSE) {
 #' 
 normalize_rows <- function(M) {
     .Call('ltools_normalize_rows', PACKAGE = 'ltools', M)
+}
+
+#' Sample from multinomial distribution
+#' 
+#' Given a matrix of category probabilities, return a matrix of outcomes
+#' sampled from multinomial distribution with those category probabilities
+#' 
+#' Note: doesn't perform any validation or checking
+#' 
+#' @param probs $N \times K$ matrix of probability of observation $n$ falling 
+#' into category $k$
+#' @param m How many outcomes should be sampled per row?  Defaults to 1.
+#' 
+#' @export
+#' 
+rMultinom <- function(probs, m = 1L) {
+    .Call('ltools_rMultinom', PACKAGE = 'ltools', probs, m)
+}
+
+#' Faster draws from multivariate normal density
+#' 
+#' Given a mean vector and variance-covariance matrix, draw from that MVN.
+#' 
+#' @param n The number of vectors to draw
+#' @param mean The mean vector
+#' @param sigma The variance-covariance matrix
+#' 
+#' @export
+#' 
+rMvnorm <- function(n, mu, sigma) {
+    .Call('ltools_rMvnorm', PACKAGE = 'ltools', n, mu, sigma)
 }
 

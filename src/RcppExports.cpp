@@ -19,6 +19,20 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// dMvnorm
+SEXP dMvnorm(arma::mat x, arma::rowvec mean, arma::mat sigma, bool lg);
+RcppExport SEXP ltools_dMvnorm(SEXP xSEXP, SEXP meanSEXP, SEXP sigmaSEXP, SEXP lgSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type mean(meanSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< bool >::type lg(lgSEXP);
+    __result = Rcpp::wrap(dMvnorm(x, mean, sigma, lg));
+    return __result;
+END_RCPP
+}
 // normalize_rows
 arma::mat normalize_rows(arma::mat M);
 RcppExport SEXP ltools_normalize_rows(SEXP MSEXP) {
@@ -27,6 +41,31 @@ BEGIN_RCPP
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< arma::mat >::type M(MSEXP);
     __result = Rcpp::wrap(normalize_rows(M));
+    return __result;
+END_RCPP
+}
+// rMultinom
+IntegerMatrix rMultinom(Rcpp::NumericMatrix probs, int m);
+RcppExport SEXP ltools_rMultinom(SEXP probsSEXP, SEXP mSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type probs(probsSEXP);
+    Rcpp::traits::input_parameter< int >::type m(mSEXP);
+    __result = Rcpp::wrap(rMultinom(probs, m));
+    return __result;
+END_RCPP
+}
+// rMvnorm
+SEXP rMvnorm(int n, arma::vec mu, arma::mat sigma);
+RcppExport SEXP ltools_rMvnorm(SEXP nSEXP, SEXP muSEXP, SEXP sigmaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type sigma(sigmaSEXP);
+    __result = Rcpp::wrap(rMvnorm(n, mu, sigma));
     return __result;
 END_RCPP
 }
