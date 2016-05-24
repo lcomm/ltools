@@ -1,5 +1,6 @@
-// [[Rcpp::depends("RcppArmadillo")]]
 #include <RcppArmadillo.h>
+
+using namespace arma;
 
 //' Faster draws from multivariate normal density
 //' 
