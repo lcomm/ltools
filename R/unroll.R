@@ -1,4 +1,4 @@
-#' Unroll a list and save its elements into the global environment
+#' Unroll a list and save its elements into the parent environment
 #' 
 #' Used for its side effects
 #' 
@@ -7,6 +7,6 @@
 #' 
 unroll <- function(list){
     for (i in 1:length(list)){
-        assign(names(list)[i], list[[i]], envir=.GlobalEnv)
+        assign(names(list)[i], list[[i]], envir=parent.frame())
     }
 }

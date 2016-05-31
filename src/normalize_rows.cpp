@@ -1,3 +1,5 @@
+// [[Rcpp::depends(RcppArmadillo)]]
+
 #include <RcppArmadillo.h>
 
 using namespace arma;
@@ -15,10 +17,11 @@ using namespace arma;
 //' 
 // [[Rcpp::export]]
 arma::mat normalize_rows(arma::mat M){
+    
     // sum the rows to get the total we need to divide
     arma::vec rs = sum(M, 1);
     
-    // in-place division of by the row sum
+    // in-place division by the row sum
     M.each_col() /= rs;
     
     // return the matrix with rows summing to 1

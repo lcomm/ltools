@@ -2,6 +2,7 @@
 #'
 #' @docType package
 #' @name ltools
-#' @importFrom Rcpp evalCpp sourceCpp
+#' @import RcppArmadillo
+#' @importFrom Rcpp evalCpp
 #' @useDynLib ltools
 NULL

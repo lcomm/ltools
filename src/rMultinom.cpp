@@ -20,9 +20,6 @@ IntegerMatrix rMultinom(Rcpp::NumericMatrix probs, int m=1) {
     // Copied with very slight adaptation from:
     // https://github.com/scristia/CNPBayes/
     
-    // set RNG
-    Rcpp::RNGScope scope;
-    
     // get dimensions of probs
     int n = probs.nrow();
     int k = probs.ncol();
