@@ -1,6 +1,6 @@
 Package: ltools
 Title: Helper Functions
-Version: 0.2
+Version: 0.3
 Authors@R: "Leah Comment <leah.comment@gmail.com> [aut, cre]"
 Description: An assortment of functions which I found myself repeatedly
     copying and pasting from homework to homework and project to project.
@@ -12,7 +12,7 @@ Depends:
     R (>= 3.2.4)
 License: GNU v2
 LazyData: true
-LinkingTo: Rcpp, RcppArmadillo
+LinkingTo: RcppArmadillo, Rcpp
 Imports:
     boot,
     graphics,
@@ -31,10 +31,9 @@ Imports:
     utils,
     Rcpp
 Suggests:
-    assertthat,
     devtools,
-    testthat,
     roxygen2,
     RPushbullet
 NeedsCompilation: yes
 RoxygenNote: 5.0.1
+SystemRequirements: C++11

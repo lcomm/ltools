@@ -1,7 +1,5 @@
 #include <Rcpp.h>
 
-using namespace Rcpp;
-
 //' Sample from multinomial distribution
 //' 
 //' Given a matrix of category probabilities, return a matrix of outcomes
@@ -9,14 +7,14 @@ using namespace Rcpp;
 //' 
 //' Note: doesn't perform any validation or checking
 //' 
-//' @param probs $N \times K$ matrix of probability of observation $n$ falling 
-//' into category $k$
+//' @param probs \eqn{N \times K} matrix of probability of observation \eqn{n} falling 
+//' into category \eqn{k}$
 //' @param m How many outcomes should be sampled per row?  Defaults to 1.
 //' 
 //' @export
 //' 
-// [[Rcpp::export]]
-IntegerMatrix rMultinom(Rcpp::NumericMatrix probs, int m=1) {
+// [[Rcpp::export(rMultinom)]]
+Rcpp::IntegerMatrix rMultinomCpp(Rcpp::NumericMatrix probs, int m=1) {
     // Copied with very slight adaptation from:
     // https://github.com/scristia/CNPBayes/
     
