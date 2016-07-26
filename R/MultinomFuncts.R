@@ -3,7 +3,7 @@
 #' @param M The input matrix
 #' @param column The vector containing the columns to be extracted
 #' @export
-column_picker <- function(M, column){
+slow_column_picker <- function(M, column){
     M[cbind(1:nrow(M), column)]
 }
 
@@ -27,7 +27,7 @@ make_dummy <- function(vec){
 #' @param log Return log-density?  Defaults to FALSE
 #' @export
 dMultinom <- function(x, probs, log = FALSE){
-    out <- column_picker(M = probs, column = x)
+    out <- slow_column_picker(M = probs, column = x)
     if (log) return(log(out)) else return(out)
 }
 
@@ -84,14 +84,18 @@ BCLmat <- function(coef_vec_M, nm = length(unique(M))){
 
 #' Function to initialize containers
 #' 
-#' Initialize containters for regression coefficients and acceptance
+#' Initialize containters for regression coefficients, acceptance, and imputed
 #' 
 #' @param R Number of MCMC scans
 #' @param coef_U Vector containing seed values for U coefficients
 #' @param coef_M Matrix containing seed values for M coefficients
 #' @param coef_Y Vector containing seed values for Y coefficients
+#' @param thin How much to thin container for imputed Us
+#' @param imp_U Whether to save imputed U's.  Defaults to FALSE.
 #' @export
-initialize_containers <- function(R, coef_U, coef_M, coef_Y){
+initialize_containers <- function(R, n, coef_U, coef_M, coef_Y, thin = 1, imp_U = FALSE){
+    if ((R/thin) %% 1 != 0) stop("R is not a multiple of thin!")
+    
     assign("coef_Us", matrix(NA, nrow = R, ncol = length(coef_U)), parent.frame())
     assign("coef_Ys", matrix(NA, nrow = R, ncol = length(coef_Y)), parent.frame())
     assign("coef_Ms", array(NA, dim = c(dim(coef_M)[1], dim(coef_M)[2], R)), parent.frame())
@@ -100,4 +104,9 @@ initialize_containers <- function(R, coef_U, coef_M, coef_Y){
                 M = matrix(0, ncol = ncol(coef_M), nrow = nrow(coef_M)), 
                 Y = rep(0, length(coef_Y))), 
            parent.frame())
+    assign("ARDs", rep(NA, R), parent.frame())
+    if (imp_U) {
+        assign("imp_Us", matrix(NA, nrow = n, ncol = R/thin), parent.frame())
+    }
+    
 }
