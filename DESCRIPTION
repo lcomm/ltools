@@ -1,6 +1,6 @@
 Package: ltools
 Title: Helper Functions
-Version: 0.3
+Version: 0.5
 Authors@R: "Leah Comment <leah.comment@gmail.com> [aut, cre]"
 Description: An assortment of functions which I found myself repeatedly
     copying and pasting from homework to homework and project to project.

@@ -54,31 +54,109 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
-// impute_U_Cpp
-arma::vec impute_U_Cpp(arma::mat Z, arma::vec Y, arma::vec M, arma::mat coef_M, arma::vec coef_Y, arma::mat coef_U);
-RcppExport SEXP ltools_impute_U_Cpp(SEXP ZSEXP, SEXP YSEXP, SEXP MSEXP, SEXP coef_MSEXP, SEXP coef_YSEXP, SEXP coef_USEXP) {
+// expit_double
+double expit_double(double x);
+RcppExport SEXP ltools_expit_double(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
-    Rcpp::traits::input_parameter< arma::mat >::type Z(ZSEXP);
-    Rcpp::traits::input_parameter< arma::vec >::type Y(YSEXP);
-    Rcpp::traits::input_parameter< arma::vec >::type M(MSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type coef_M(coef_MSEXP);
-    Rcpp::traits::input_parameter< arma::vec >::type coef_Y(coef_YSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type coef_U(coef_USEXP);
-    __result = Rcpp::wrap(impute_U_Cpp(Z, Y, M, coef_M, coef_Y, coef_U));
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    __result = Rcpp::wrap(expit_double(x));
     return __result;
 END_RCPP
 }
-// rMultinom
-IntegerMatrix rMultinom(Rcpp::NumericMatrix probs, int m);
-RcppExport SEXP ltools_rMultinom(SEXP probsSEXP, SEXP mSEXP) {
+// dU_Cpp
+arma::vec dU_Cpp(const arma::vec& coef_U, const arma::mat& Z, const arma::vec& A, const arma::vec& U, bool lg);
+RcppExport SEXP ltools_dU_Cpp(SEXP coef_USEXP, SEXP ZSEXP, SEXP ASEXP, SEXP USEXP, SEXP lgSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::vec& >::type coef_U(coef_USEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type Z(ZSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type U(USEXP);
+    Rcpp::traits::input_parameter< bool >::type lg(lgSEXP);
+    __result = Rcpp::wrap(dU_Cpp(coef_U, Z, A, U, lg));
+    return __result;
+END_RCPP
+}
+// dY_Cpp
+arma::vec dY_Cpp(const arma::vec& coef_Y, const arma::mat& Z, const arma::vec& A, const arma::mat& asmM, const arma::vec& U, const arma::vec& Y, bool intx, bool lg);
+RcppExport SEXP ltools_dY_Cpp(SEXP coef_YSEXP, SEXP ZSEXP, SEXP ASEXP, SEXP asmMSEXP, SEXP USEXP, SEXP YSEXP, SEXP intxSEXP, SEXP lgSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::vec& >::type coef_Y(coef_YSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type Z(ZSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type asmM(asmMSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type U(USEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< bool >::type intx(intxSEXP);
+    Rcpp::traits::input_parameter< bool >::type lg(lgSEXP);
+    __result = Rcpp::wrap(dY_Cpp(coef_Y, Z, A, asmM, U, Y, intx, lg));
+    return __result;
+END_RCPP
+}
+// dM_Cpp
+arma::mat dM_Cpp(const arma::mat& coef_M, const arma::mat& Z, const arma::vec& A, const arma::vec& U, const arma::mat& asmM, const arma::vec& M, bool lg);
+RcppExport SEXP ltools_dM_Cpp(SEXP coef_MSEXP, SEXP ZSEXP, SEXP ASEXP, SEXP USEXP, SEXP asmMSEXP, SEXP MSEXP, SEXP lgSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::mat& >::type coef_M(coef_MSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type Z(ZSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type U(USEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type asmM(asmMSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type M(MSEXP);
+    Rcpp::traits::input_parameter< bool >::type lg(lgSEXP);
+    __result = Rcpp::wrap(dM_Cpp(coef_M, Z, A, U, asmM, M, lg));
+    return __result;
+END_RCPP
+}
+// get_pU1_Cpp
+arma::vec get_pU1_Cpp(const arma::mat& Z, const arma::vec& Y, const arma::vec& A, const arma::mat& asmM, const arma::vec& M, const arma::mat& coef_M, const arma::vec& coef_Y, const arma::vec& coef_U);
+RcppExport SEXP ltools_get_pU1_Cpp(SEXP ZSEXP, SEXP YSEXP, SEXP ASEXP, SEXP asmMSEXP, SEXP MSEXP, SEXP coef_MSEXP, SEXP coef_YSEXP, SEXP coef_USEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::mat& >::type Z(ZSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type asmM(asmMSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type M(MSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type coef_M(coef_MSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type coef_Y(coef_YSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type coef_U(coef_USEXP);
+    __result = Rcpp::wrap(get_pU1_Cpp(Z, Y, A, asmM, M, coef_M, coef_Y, coef_U));
+    return __result;
+END_RCPP
+}
+// calc_ARD_Cpp
+double calc_ARD_Cpp(const arma::mat& coef_M, const arma::mat& Z, const arma::vec& U, const arma::vec& coef_Y, bool intx);
+RcppExport SEXP ltools_calc_ARD_Cpp(SEXP coef_MSEXP, SEXP ZSEXP, SEXP USEXP, SEXP coef_YSEXP, SEXP intxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::mat& >::type coef_M(coef_MSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type Z(ZSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type U(USEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type coef_Y(coef_YSEXP);
+    Rcpp::traits::input_parameter< bool >::type intx(intxSEXP);
+    __result = Rcpp::wrap(calc_ARD_Cpp(coef_M, Z, U, coef_Y, intx));
+    return __result;
+END_RCPP
+}
+// rMultinomCpp
+Rcpp::IntegerMatrix rMultinomCpp(Rcpp::NumericMatrix probs, int m);
+RcppExport SEXP ltools_rMultinomCpp(SEXP probsSEXP, SEXP mSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type probs(probsSEXP);
     Rcpp::traits::input_parameter< int >::type m(mSEXP);
-    __result = Rcpp::wrap(rMultinom(probs, m));
+    __result = Rcpp::wrap(rMultinomCpp(probs, m));
     return __result;
 END_RCPP
 }

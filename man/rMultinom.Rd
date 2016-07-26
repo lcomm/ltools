@@ -7,8 +7,8 @@
 rMultinom(probs, m = 1L)
 }
 \arguments{
-\item{probs}{$N \times K$ matrix of probability of observation $n$ falling 
-into category $k$}
+\item{probs}{\eqn{N \times K} matrix of probability of observation \eqn{n} falling 
+into category \eqn{k}$}
 
 \item{m}{How many outcomes should be sampled per row?  Defaults to 1.}
 }

@@ -4,7 +4,7 @@
 \alias{initialize_containers}
 \title{Function to initialize containers}
 \usage{
-initialize_containers(R, coef_U, coef_M, coef_Y)
+initialize_containers(R, n, coef_U, coef_M, coef_Y, thin = 1, imp_U = FALSE)
 }
 \arguments{
 \item{R}{Number of MCMC scans}
@@ -14,8 +14,12 @@ initialize_containers(R, coef_U, coef_M, coef_Y)
 \item{coef_M}{Matrix containing seed values for M coefficients}
 
 \item{coef_Y}{Vector containing seed values for Y coefficients}
+
+\item{thin}{How much to thin container for imputed Us}
+
+\item{imp_U}{Whether to save imputed U's.  Defaults to FALSE.}
 }
 \description{
-Initialize containters for regression coefficients and acceptance
+Initialize containters for regression coefficients, acceptance, and imputed
 }
 
