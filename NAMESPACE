@@ -3,6 +3,7 @@
 export(BCLmat)
 export(GelmanRubin)
 export(add.chain)
+export(addDimension)
 export(bunny_function)
 export(cat_function)
 export(col2alpha)

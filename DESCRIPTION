@@ -29,7 +29,6 @@ Imports:
     RcppArmadillo,
     stats,
     utils,
-    Rcpp
 Suggests:
     devtools,
     roxygen2,
