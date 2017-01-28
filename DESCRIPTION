@@ -32,7 +32,8 @@ Imports:
 Suggests:
     devtools,
     roxygen2,
-    RPushbullet
+    RPushbullet,
+    testthat
 NeedsCompilation: yes
 RoxygenNote: 5.0.1
 SystemRequirements: C++11
