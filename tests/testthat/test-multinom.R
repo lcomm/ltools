@@ -19,4 +19,19 @@ test_that("softmax versions are equivalent", {
   
 })
 
+test_that("column selection works", {
+  
+  # Comparison function
+  select_col <- function(mat, vec){
+    mat[cbind(1:nrow(mat), vec)]
+  }
+  
+  # Test case
+  mat <- matrix(1:20, 4, 5)
+  vec <- c(1, 3, 4, 5)
+  
+  # Check equal
+  expect_equal(select_col(mat, vec), dMultinom(vec, mat, log = FALSE))
+  
+})
 
